@@ -1,0 +1,99 @@
+// {}
+
+@import "../utilidades/mediaqueris";
+@import "../utilidades/variables";
+@import "../utilidades/mixins";
+@import "../utilidades/extends";
+
+body{
+    header{
+        @extend %header;
+            h1{
+                @extend %h1;
+            }
+    
+        //nav y sus propiedades
+
+    }
+
+    .main-kamados{
+        .art-kamados{
+            text-align: center;
+            @include margin(1.5rem, 1.5rem);
+
+            p{
+                margin-top: 1rem;
+            }
+
+            @include tablet{
+                display: grid;
+                justify-content: center;
+                font-size: $size-tablet;
+            }
+
+            @include desktop{
+                font-size: $size-desktop;
+                margin-bottom: 4rem;
+            }
+        }
+
+        .contenedor-img-kamado{
+            img{
+                @extend %prop-img;
+            }
+
+            .img-kamado-uno,
+            .img-kamado-dos,
+            .img-kamado-tres{
+                @extend %img-kamado-c;
+            } 
+            
+            @include tablet{
+                @include templates(2, 50%, 2,50%);
+                padding: 2rem;
+                margin-right: 2rem;
+                margin-bottom: 1rem;
+                gap: 2rem;
+
+                .img-kamado-uno,
+                .img-kamado-dos{
+                    padding: 0;
+                }
+
+                .img-kamado-tres{
+                    padding: 0;
+                    grid-column: span 2;
+                }
+            }
+
+            @include desktop{
+                display: flex;
+                padding: 0;
+                gap: 0;
+                margin: 0;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                .img-kamado-dos{
+                    @include margin(1.5rem, 1.5rem)
+                }
+            }
+        }
+    }
+
+
+ // {}
+    .footer{
+        @extend %footer;
+        .btn{
+            .btn-inst{
+                margin-bottom: 1rem;
+            }
+        }
+
+        .btn-wapp{
+            @extend %item-fixed;
+        }
+            
+    }
+}

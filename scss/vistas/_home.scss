@@ -1,0 +1,142 @@
+// {}
+
+@import "../utilidades/mediaqueris";
+@import "../utilidades/variables";
+@import "../utilidades/mixins";
+@import "../utilidades/extends";
+
+body{
+    
+    header{
+        @extend %header;
+            h1{
+                @extend %h1;
+            }
+    
+        //nav y sus propiedades
+
+    }
+
+    .main-home{        
+        .contenedor-mediodias{
+            @include tablet{
+                display: flex;  
+                margin-left: 3rem;
+            }
+            
+            .img-home-uno{
+                @extend %img-home;
+                    img{
+                        justify-items: center;
+                    }
+            }
+            .mediodias{
+                text-align: center;
+                @include tablet{
+                    text-align: left;
+                    margin-left: 2rem;
+                    font-size: $size-tablet;
+                    h2{
+                        margin-left: 1rem;
+                    }
+                }
+                
+                p{
+                        @extend %padd-home-p;
+                    }
+            }
+        }
+        
+        .contenedor-salas{
+            @include tablet{
+                display: flex; 
+                margin-left: 3rem;
+            }
+            
+            .img-home-dos{
+                @extend %img-home;
+                img{
+                    justify-items: center;
+                }
+            }
+            .sala-reuniones{
+                text-align: center;
+                @include tablet{
+                    text-align: left;
+                    margin-left: 1.5rem;
+                    font-size: $size-tablet;
+                    h2{
+                        margin-left: 1rem;
+                    }
+                }
+               
+                p{
+                    @extend %padd-home-p;
+                }
+            }
+        
+        }
+
+        .contenedor-dias{
+            @include tablet{
+                display: flex;
+                margin-left: 3rem;   
+            }
+            
+            .img-home-tres{
+                @extend %img-home;
+                img{
+                    justify-items: center;
+                }
+            }
+            .dias-horarios{
+                text-align: center;
+                @include tablet{
+                    text-align: left;
+                    margin-left: 1.5rem;
+                    font-size: $size-tablet;
+                    h2{
+                        margin-left: 1rem;
+                    }
+                }
+                
+                p{
+                    @extend %padd-home-p;
+                }
+        
+            }
+        }
+        @include desktop{
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: $size-desktop;
+        }
+    
+    }
+
+    .footer{
+        @extend %footer;
+        .btn{
+            .btn-inst{
+                margin-bottom: 1rem;
+            }
+        }
+
+        .btn-wapp{
+            @extend %item-fixed;
+        }
+            
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+// {}
