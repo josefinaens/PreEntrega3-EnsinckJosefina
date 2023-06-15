@@ -5,13 +5,14 @@
 
 // {}
 body{
-    header{
+    header{           
         @extend %header;
             h1{
                 @extend %h1;
             }
-    
+   
         //nav y sus propiedades
+
 
     }
     .main-bar{
@@ -50,11 +51,13 @@ body{
             .img-bar-dos,
             .img-bar-cuatro{
                 @extend %img-bar-c;
-                
                 @include tablet{
-                    padding: 0rem;
+                    padding: 0; 
                 }
             }
+        
+            
+            
         }
         .art-bar{
             justify-content: center;
